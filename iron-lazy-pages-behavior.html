@@ -8,7 +8,7 @@ of the BSD license.  See the LICENSE file for details.
 -->
 <link rel="import" href="../polymer/polymer.html">
 <link rel="import" href="../iron-selector/iron-selectable.html">
-
+<link rel="import" href="../iron-resizable-behavior/iron-resizable-behavior.html">
 <script>
 /** @polymerBehavior */
 Polymer.IronLazyPagesBehaviorImpl = {
@@ -80,6 +80,8 @@ Polymer.IronLazyPagesBehaviorImpl = {
     } else {
       onFinished();
     }
+    this.async(this.notifyResize);
+
   },
 
   /**
@@ -115,6 +117,7 @@ Polymer.IronLazyPagesBehaviorImpl = {
 /** @polymerBehavior */
 Polymer.IronLazyPagesBehavior = [
   Polymer.IronSelectableBehavior,
-  Polymer.IronLazyPagesBehaviorImpl
+  Polymer.IronLazyPagesBehaviorImpl,
+  Polymer.IronResizableBehavior
 ];
 </script>
